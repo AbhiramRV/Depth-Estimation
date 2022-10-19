@@ -6,10 +6,10 @@ Extrensic parameters are used to translate world points to camera coordinates.In
     transfer camera coordinates onto image coordinates(2D).
 Camera calibration is also used to rectify image distortions.
 
-  [su sv s].T = k [R|t] [X Y Z 1].T
+  [su,sv,s].T = k [R|t] [X Y Z 1].T
   
   k is intrinsic parameter matrix
-  R|t is extrensic parameter matrix
+  [R|t] is extrensic parameter matrix
 
 Disparity is the difference in the location of same 3D object in the prospective of two different cameras.
 sterio formulation
