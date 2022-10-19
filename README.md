@@ -6,7 +6,7 @@ Extrensic parameters are used to translate world points to camera coordinates.In
     transfer camera coordinates onto image coordinates(2D).
 Camera calibration is also used to rectify image distortions.
 
-  [su,sv,s].T = k [R|t] [X Y Z 1].T
+  [su sv s].T = k [R|t] [X Y Z 1].T
   
   k is intrinsic parameter matrix
   [R|t] is extrensic parameter matrix
@@ -18,3 +18,15 @@ X= Z.xL/f and Y= Z.yL/f
 
 Accuracy of depth estimation depends on the quality of disparity estimation.
 Disparity can be coputed by disparity correspondence(matching pixels in two different images)
+Steps involved in depth map estimation are 
+    - Read left and right image 
+    -Calculate disparity between the images
+    -Decompose calibration matirx to get intrinsic and extrensic parameter.
+    -Calculate depth of each pixel using the formula Z= f.b/(xL-xR) =f.b/d where d is disparity, b is base line destance between cameras, f is focal length(availabe in intrensic parameters.
+
+
+Useful opencv functions are
+    - cv2.StereoBM or cv2.StereoSGBM
+    -cv2.decomposeProjectionMatrix()
+   
+So inorder to compute depth maps,we need camera calibration matrices(for both left and right camera). 
