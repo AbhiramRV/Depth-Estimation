@@ -11,8 +11,10 @@ Camera calibration is also used to rectify image distortions.
   k is intrinsic parameter matrix
   R|t is extrensic parameter matrix
 
-Steps involved in depth estimation are
-  -Feature Detection(harris corner detection, Harris laplace etc)
-  -Feature descriptors (SURF,FLOH,BRIEF etc)
-  -Feature Matching
-  -Disparity Estimation and depth estimation.
+Disparity is the difference in the location of same 3D object in the prospective of two different cameras.
+sterio formulation
+Z= f.b/(xL-xR) =f.b/d
+X= Z.xL/f and Y= Z.yL/f
+
+Accuracy of depth estimation depends on the quality of disparity estimation.
+Disparity can be coputed by disparity correspondence(matching pixels in two different images)
