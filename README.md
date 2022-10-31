@@ -30,3 +30,9 @@ Useful opencv functions are
     -cv2.decomposeProjectionMatrix()
    
 So inorder to compute depth maps,we need camera calibration matrices(for both left and right camera). 
+
+
+Visual Odeometry is calcualted using four step process.
+1. Feature extraction (ex- SURF, SIFT, ORB and BRIEF)
+2. Feature matching from a pair of subsequent frames
+3. Trajectory estimation and visualization
